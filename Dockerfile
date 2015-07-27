@@ -7,7 +7,7 @@ RUN apt-get clean \
         graphicsmagick \
         libc-dev \
         make \
-        python-minimal \
+        python \
     && apt-get purge -y \
     && apt-get clean autoclean \
     && apt-get autoremove -y \
