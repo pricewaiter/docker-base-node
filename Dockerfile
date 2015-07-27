@@ -1,6 +1,16 @@
 FROM node:0.12-slim
 
-RUN apt-get clean && apt-get update && apt-get -y --fix-missing install python build-essential
+RUN apt-get clean \
+    && apt-get update \
+    && apt-get -y --fix-missing --no-install-recommends install \
+        g++ \
+        libc-dev \
+        make \
+        python-minimal \
+    && apt-get purge -y \
+    && apt-get clean autoclean \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}/ /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
