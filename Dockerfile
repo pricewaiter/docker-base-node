@@ -4,6 +4,7 @@ RUN apt-get clean \
     && apt-get update \
     && apt-get -y --fix-missing --no-install-recommends install \
         g++ \
+        graphicsmagick \
         libc-dev \
         make \
         python-minimal \
