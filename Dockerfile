@@ -1,17 +1,6 @@
-FROM node:0.12-slim
+FROM mhart/alpine-node:0.12.7
 
-RUN apt-get clean \
-    && apt-get update \
-    && apt-get -y --fix-missing --no-install-recommends install \
-        g++ \
-        graphicsmagick \
-        libc-dev \
-        make \
-        python \
-    && apt-get purge -y \
-    && apt-get clean autoclean \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/ /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN apk --update add python
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
