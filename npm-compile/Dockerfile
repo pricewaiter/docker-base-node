@@ -6,7 +6,8 @@ RUN npm install -g npm@${NPM_VERSION} && \
   rm -rf /usr/share/man /tmp/* /root/.npm /root/.node-gyp \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
 
-RUN apk --update add python make g++
+RUN apk --update add python make g++ git && \
+    /bin/rm -rf /tmp/* /var/cache/apk/*
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
