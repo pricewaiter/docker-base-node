@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:5.4.1
+FROM mhart/alpine-node:5.7.0
 ENV NPM_VERSION=3
 
 RUN npm install -g npm@${NPM_VERSION} && \
