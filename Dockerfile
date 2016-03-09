@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:5.7.0
+FROM mhart/alpine-node:5.8.0
 
 RUN apk --update add git && \
     /bin/rm -rf /tmp/* /var/cache/apk/* && \
