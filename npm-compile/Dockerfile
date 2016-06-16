@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6.2
+FROM mhart/alpine-node:6.2.1
 
 RUN apk --update add python make g++
 
