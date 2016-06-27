@@ -10,7 +10,7 @@ RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup_${NODE_MAJOR_VERSION}.x | bash - && \
     apt-get install -y nodejs && \
 
-    apt-get purge --auto-remove -y curl libcurl3 perl python python-minimal python2.7 python2.7-minimal && \
+    apt-get purge --auto-remove -y curl libcurl3 python python-minimal python2.7 python2.7-minimal && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
