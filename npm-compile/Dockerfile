@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:6.2.2
 
-RUN apk --update add python make g++
+RUN apk --update add python make g++ git
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
