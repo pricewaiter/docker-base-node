@@ -13,13 +13,15 @@ RUN apt-get update && \
     apt-get purge --auto-remove -y curl libcurl3 python python-minimal python2.7 python2.7-minimal && \
     apt-get autoremove -y && \
     apt-get clean && \
+    npm install -g yarn && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 ONBUILD COPY package.json /usr/src/app/
-ONBUILD RUN npm install --production --no-optional && /bin/rm -rf /tmp/npm* /root/.npm /root/.node-gyp
+ONBUILD COPY yarn.lock /usr/src/app/
+ONBUILD RUN yarn install --production && /bin/rm -rf /tmp/npm* /root/.npm /root/.node-gyp
 ONBUILD COPY . /usr/src/app
 
 CMD npm run start
