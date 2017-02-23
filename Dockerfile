@@ -1,9 +1,9 @@
-FROM mhart/alpine-node:6.9.4
+FROM mhart/alpine-node:6.9.5
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN npm install -g yarn
+RUN npm install -g yarn && /bin/rm -rf /tmp/npm* /root/.npm /root/.node-gyp
 
 ONBUILD COPY package.json /usr/src/app/
 ONBUILD COPY yarn.lock /usr/src/app/
