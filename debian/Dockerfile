@@ -1,5 +1,5 @@
 FROM google/debian:wheezy
-ARG NODE_MAJOR_VERSION=6
+ARG NODE_MAJOR_VERSION=8
 
 # Based on https://github.com/sjevs/docker-node/
 
