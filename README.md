@@ -1,2 +1,2 @@
 # docker-base-node
-Internal layer that includes python for npm builds
+Internal layer that includes python for npm builds.
